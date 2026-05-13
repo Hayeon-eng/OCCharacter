@@ -193,23 +193,185 @@ function shell(content){
 
 function character(key){
   const t = types[key];
-  return `
-    <div class="character-card" style="--type:${t.color};--hair:${t.hair}">
-      <div class="person">
-        <div class="hair ${t.hairClass || ""}"></div>
-        <div class="face">
-          <div class="eye l ${key==='idea'?'spark':''}"></div><div class="eye r ${key==='idea'?'spark':''}"></div>
-          <div class="blush l"></div><div class="blush r"></div>
-          <div class="mouth ${key==='detail' || key==='organizer' ? 'flat' : ''}"></div>
-        </div>
-        <div class="neck"></div>
-        <div class="outfit"></div>
-        <div class="arm l"></div><div class="arm r"></div>
-        <div class="leg l"></div><div class="leg r"></div>
-        <div class="shoe l"></div><div class="shoe r"></div>
-        <div class="prop ${t.prop}"></div>
-      </div>
-    </div>`;
+  const svg = {
+    organizer: `
+      <svg viewBox="0 0 360 420" class="sticker-svg" aria-hidden="true">
+        <ellipse cx="180" cy="378" rx="94" ry="18" fill="rgba(0,0,0,.10)"/>
+        <rect x="78" y="72" width="204" height="260" rx="60" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M118 115c10-42 114-62 142 0 17 38-4 88-4 88H104s-7-53 14-88z" fill="#26324a"/>
+        <circle cx="180" cy="164" r="58" fill="#FFD9C2"/>
+        <path d="M122 152c22-34 76-44 116-16 0-38-31-66-67-66-36 0-63 26-70 63-3 14 5 19 21 19z" fill="#26324a"/>
+        <circle cx="158" cy="166" r="7" fill="#171717"/>
+        <circle cx="202" cy="166" r="7" fill="#171717"/>
+        <path d="M167 192c11 9 25 9 36 0" fill="none" stroke="#171717" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="140" cy="184" r="10" fill="#ff9eb5" opacity=".45"/>
+        <circle cx="220" cy="184" r="10" fill="#ff9eb5" opacity=".45"/>
+        <path d="M114 246c8-48 124-48 132 0l11 83H103l11-83z" fill="#6D8CFF"/>
+        <rect x="106" y="236" width="148" height="114" rx="24" fill="#fff" stroke="#6D8CFF" stroke-width="8"/>
+        <path d="M135 270h72M135 298h82M135 326h55" stroke="#6D8CFF" stroke-width="9" stroke-linecap="round"/>
+        <path d="M108 267l-45-22M253 266l44-24" stroke="#FFD9C2" stroke-width="18" stroke-linecap="round"/>
+        <circle cx="67" cy="244" r="16" fill="#FFD9C2"/>
+        <circle cx="292" cy="240" r="16" fill="#FFD9C2"/>
+        <path d="M128 334v44M232 334v44" stroke="#343a46" stroke-width="28" stroke-linecap="round"/>
+        <path d="M104 382h52M204 382h52" stroke="#171717" stroke-width="16" stroke-linecap="round"/>
+        <rect x="239" y="62" width="72" height="54" rx="18" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M256 82h36M256 98h24" stroke="#6D8CFF" stroke-width="7" stroke-linecap="round"/>
+        <text x="74" y="58" font-size="28" font-weight="900" fill="#6D8CFF">✓</text>
+      </svg>`,
+    curator: `
+      <svg viewBox="0 0 360 420" class="sticker-svg" aria-hidden="true">
+        <ellipse cx="180" cy="378" rx="94" ry="18" fill="rgba(0,0,0,.10)"/>
+        <rect x="74" y="70" width="212" height="264" rx="68" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M100 157c-2-72 38-105 86-105s85 38 80 108c-4 56-28 74-28 74H122s-20-22-22-77z" fill="#4A3671"/>
+        <circle cx="180" cy="166" r="60" fill="#FFD8BF"/>
+        <path d="M119 146c24-42 82-56 127-25-6-47-39-69-75-65-37 4-63 37-65 79-.5 15 2 18 13 11z" fill="#4A3671"/>
+        <circle cx="158" cy="168" r="7" fill="#171717"/>
+        <circle cx="204" cy="168" r="7" fill="#171717"/>
+        <path d="M170 194c12 7 23 7 34 0" fill="none" stroke="#171717" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="139" cy="186" r="10" fill="#ff9eb5" opacity=".48"/>
+        <circle cx="224" cy="186" r="10" fill="#ff9eb5" opacity=".48"/>
+        <path d="M110 252c10-54 132-54 142 0l12 80H98l12-80z" fill="#A678FF"/>
+        <path d="M108 272l-47-16M252 273l50-17" stroke="#FFD8BF" stroke-width="18" stroke-linecap="round"/>
+        <circle cx="58" cy="253" r="17" fill="#FFD8BF"/>
+        <circle cx="303" cy="252" r="17" fill="#FFD8BF"/>
+        <rect x="66" y="219" width="86" height="70" rx="24" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <circle cx="91" cy="246" r="10" fill="#FF8B70"/>
+        <circle cx="117" cy="246" r="10" fill="#A678FF"/>
+        <circle cx="104" cy="274" r="10" fill="#3FD2AE"/>
+        <path d="M129 334v44M231 334v44" stroke="#343a46" stroke-width="28" stroke-linecap="round"/>
+        <path d="M105 382h52M204 382h52" stroke="#171717" stroke-width="16" stroke-linecap="round"/>
+        <text x="266" y="74" font-size="32" font-weight="900" fill="#A678FF">✦</text>
+      </svg>`,
+    speed: `
+      <svg viewBox="0 0 360 420" class="sticker-svg" aria-hidden="true">
+        <ellipse cx="180" cy="378" rx="100" ry="18" fill="rgba(0,0,0,.10)"/>
+        <rect x="72" y="74" width="216" height="258" rx="64" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M126 94c20-33 86-47 120-3 24 31 12 80 12 80l-145-4s-11-42 13-73z" fill="#553328"/>
+        <circle cx="182" cy="163" r="58" fill="#FFD8BF"/>
+        <path d="M124 139c31-29 78-36 119-13-5-35-30-58-64-58-35 0-62 26-66 61-1 10 4 15 11 10z" fill="#553328"/>
+        <circle cx="160" cy="165" r="7" fill="#171717"/>
+        <circle cx="207" cy="165" r="7" fill="#171717"/>
+        <path d="M169 192c16 13 33 10 45-2" fill="none" stroke="#171717" stroke-width="6" stroke-linecap="round"/>
+        <path d="M104 250c10-49 138-49 151 0l14 82H93l11-82z" fill="#FF8B70"/>
+        <path d="M119 264l-54 35M254 260l54 30" stroke="#FFD8BF" stroke-width="18" stroke-linecap="round"/>
+        <circle cx="63" cy="299" r="17" fill="#FFD8BF"/>
+        <circle cx="309" cy="290" r="17" fill="#FFD8BF"/>
+        <path d="M135 334v44M229 334v44" stroke="#343a46" stroke-width="28" stroke-linecap="round"/>
+        <path d="M95 383h64M204 383h68" stroke="#171717" stroke-width="17" stroke-linecap="round"/>
+        <rect x="238" y="64" width="76" height="56" rx="20" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <text x="257" y="103" font-size="35" font-weight="900" fill="#FF8B70">⚡</text>
+        <path d="M54 124h48M43 150h38M61 176h32" stroke="#FF8B70" stroke-width="8" stroke-linecap="round" opacity=".85"/>
+      </svg>`,
+    strategist: `
+      <svg viewBox="0 0 360 420" class="sticker-svg" aria-hidden="true">
+        <ellipse cx="180" cy="378" rx="94" ry="18" fill="rgba(0,0,0,.10)"/>
+        <rect x="75" y="72" width="210" height="260" rx="64" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M113 140c-4-54 31-82 69-82s70 30 68 84c-1 35-18 64-18 64H128s-12-31-15-66z" fill="#202640"/>
+        <circle cx="181" cy="164" r="58" fill="#FFD8BF"/>
+        <path d="M123 142c24-34 72-46 113-19-2-36-25-57-59-57-31 0-58 24-64 58-2 15 2 23 10 18z" fill="#202640"/>
+        <circle cx="159" cy="166" r="7" fill="#171717"/>
+        <circle cx="205" cy="166" r="7" fill="#171717"/>
+        <path d="M169 194h26" stroke="#171717" stroke-width="6" stroke-linecap="round"/>
+        <path d="M110 250c10-50 132-50 142 0l12 82H98l12-82z" fill="#3B5BDB"/>
+        <path d="M112 267l-44-27M250 267l43-29" stroke="#FFD8BF" stroke-width="18" stroke-linecap="round"/>
+        <circle cx="67" cy="238" r="16" fill="#FFD8BF"/>
+        <circle cx="294" cy="237" r="16" fill="#FFD8BF"/>
+        <rect x="238" y="74" width="78" height="68" rx="20" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M255 94h42M255 112h24M282 112l16 15" stroke="#3B5BDB" stroke-width="7" stroke-linecap="round"/>
+        <path d="M130 334v44M230 334v44" stroke="#343a46" stroke-width="28" stroke-linecap="round"/>
+        <path d="M105 382h52M204 382h52" stroke="#171717" stroke-width="16" stroke-linecap="round"/>
+        <text x="64" y="76" font-size="31" font-weight="900" fill="#3B5BDB">?</text>
+      </svg>`,
+    detail: `
+      <svg viewBox="0 0 360 420" class="sticker-svg" aria-hidden="true">
+        <ellipse cx="180" cy="378" rx="94" ry="18" fill="rgba(0,0,0,.10)"/>
+        <rect x="76" y="72" width="208" height="260" rx="64" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M112 143c-2-55 28-86 69-86s73 31 71 86c-1 37-18 66-18 66H126s-13-31-14-66z" fill="#3A3326"/>
+        <circle cx="181" cy="165" r="58" fill="#FFD8BF"/>
+        <path d="M122 140c25-35 77-44 119-15-5-40-29-61-63-60-35 1-61 27-67 61-2 13 3 20 11 14z" fill="#3A3326"/>
+        <path d="M153 166h14M197 166h14" stroke="#171717" stroke-width="7" stroke-linecap="round"/>
+        <path d="M172 195h22" stroke="#171717" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="142" cy="186" r="9" fill="#ff9eb5" opacity=".42"/>
+        <circle cx="222" cy="186" r="9" fill="#ff9eb5" opacity=".42"/>
+        <path d="M109 251c10-51 134-51 144 0l12 81H97l12-81z" fill="#FFD166"/>
+        <path d="M117 265l-46-25M251 265l38-36" stroke="#FFD8BF" stroke-width="18" stroke-linecap="round"/>
+        <circle cx="68" cy="238" r="16" fill="#FFD8BF"/>
+        <circle cx="291" cy="228" r="16" fill="#FFD8BF"/>
+        <circle cx="282" cy="104" r="30" fill="#fff" stroke="#FFD166" stroke-width="9"/>
+        <path d="M304 127l28 28" stroke="#FFD166" stroke-width="10" stroke-linecap="round"/>
+        <path d="M130 334v44M230 334v44" stroke="#343a46" stroke-width="28" stroke-linecap="round"/>
+        <path d="M105 382h52M204 382h52" stroke="#171717" stroke-width="16" stroke-linecap="round"/>
+      </svg>`,
+    idea: `
+      <svg viewBox="0 0 360 420" class="sticker-svg" aria-hidden="true">
+        <ellipse cx="180" cy="378" rx="100" ry="18" fill="rgba(0,0,0,.10)"/>
+        <rect x="72" y="72" width="216" height="260" rx="68" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M104 152c-8-68 35-100 78-100s82 39 74 105c-7 58-25 70-25 70H126s-17-23-22-75z" fill="#4A2638"/>
+        <circle cx="180" cy="164" r="58" fill="#FFD8BF"/>
+        <path d="M119 143c28-40 82-48 124-18-5-42-31-66-66-65-37 1-65 31-69 68-1 13 2 20 11 15z" fill="#4A2638"/>
+        <circle cx="158" cy="166" r="8" fill="#171717"/>
+        <circle cx="204" cy="166" r="8" fill="#171717"/>
+        <circle cx="158" cy="166" r="3" fill="#fff"/>
+        <circle cx="204" cy="166" r="3" fill="#fff"/>
+        <path d="M168 192c14 13 31 13 45 0" fill="none" stroke="#171717" stroke-width="6" stroke-linecap="round"/>
+        <path d="M108 252c10-50 136-50 146 0l12 80H96l12-80z" fill="#FF6FAE"/>
+        <path d="M115 263l-45-40M252 263l45-40" stroke="#FFD8BF" stroke-width="18" stroke-linecap="round"/>
+        <circle cx="68" cy="222" r="16" fill="#FFD8BF"/>
+        <circle cx="298" cy="222" r="16" fill="#FFD8BF"/>
+        <text x="51" y="89" font-size="34" font-weight="900" fill="#FF6FAE">!</text>
+        <text x="276" y="75" font-size="34" font-weight="900" fill="#FF6FAE">✦</text>
+        <rect x="235" y="92" width="76" height="56" rx="18" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M253 113h40M253 130h24" stroke="#FF6FAE" stroke-width="7" stroke-linecap="round"/>
+        <path d="M130 334v44M230 334v44" stroke="#343a46" stroke-width="28" stroke-linecap="round"/>
+        <path d="M105 382h52M204 382h52" stroke="#171717" stroke-width="16" stroke-linecap="round"/>
+      </svg>`,
+    experimenter: `
+      <svg viewBox="0 0 360 420" class="sticker-svg" aria-hidden="true">
+        <ellipse cx="180" cy="378" rx="94" ry="18" fill="rgba(0,0,0,.10)"/>
+        <rect x="76" y="72" width="208" height="260" rx="64" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M119 104c22-40 94-46 124 2 23 37 4 91 4 91H111s-16-54 8-93z" fill="#243B2A"/>
+        <circle cx="181" cy="164" r="58" fill="#FFD8BF"/>
+        <path d="M123 139c26-32 77-41 118-13-4-38-29-61-63-60-34 1-61 27-66 60-2 13 2 19 11 13z" fill="#243B2A"/>
+        <circle cx="159" cy="166" r="7" fill="#171717"/>
+        <circle cx="205" cy="166" r="7" fill="#171717"/>
+        <path d="M170 193c12 9 25 9 36 0" fill="none" stroke="#171717" stroke-width="6" stroke-linecap="round"/>
+        <path d="M109 251c10-50 134-50 144 0l12 81H97l12-81z" fill="#7BDC65"/>
+        <path d="M117 263l-44-30M250 263l43-32" stroke="#FFD8BF" stroke-width="18" stroke-linecap="round"/>
+        <circle cx="72" cy="232" r="16" fill="#FFD8BF"/>
+        <circle cx="294" cy="231" r="16" fill="#FFD8BF"/>
+        <rect x="248" y="72" width="50" height="88" rx="20" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M266 92v28l-14 24h42l-14-24V92" fill="none" stroke="#7BDC65" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="273" cy="134" r="7" fill="#7BDC65"/>
+        <circle cx="70" cy="96" r="10" fill="#7BDC65"/>
+        <circle cx="90" cy="77" r="6" fill="#7BDC65"/>
+        <path d="M130 334v44M230 334v44" stroke="#343a46" stroke-width="28" stroke-linecap="round"/>
+        <path d="M105 382h52M204 382h52" stroke="#171717" stroke-width="16" stroke-linecap="round"/>
+      </svg>`,
+    coordinator: `
+      <svg viewBox="0 0 360 420" class="sticker-svg" aria-hidden="true">
+        <ellipse cx="180" cy="378" rx="94" ry="18" fill="rgba(0,0,0,.10)"/>
+        <rect x="76" y="72" width="208" height="260" rx="64" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M110 147c-3-62 31-93 72-93s75 34 70 96c-4 48-22 69-22 69H128s-16-26-18-72z" fill="#1D2D50"/>
+        <circle cx="181" cy="166" r="58" fill="#FFD8BF"/>
+        <path d="M122 142c25-35 78-45 119-15-5-41-30-63-64-62-35 1-62 28-67 63-2 13 3 20 12 14z" fill="#1D2D50"/>
+        <circle cx="159" cy="168" r="7" fill="#171717"/>
+        <circle cx="205" cy="168" r="7" fill="#171717"/>
+        <path d="M168 195c12 8 26 8 38 0" fill="none" stroke="#171717" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="140" cy="187" r="9" fill="#ff9eb5" opacity=".42"/>
+        <circle cx="224" cy="187" r="9" fill="#ff9eb5" opacity=".42"/>
+        <path d="M109 252c10-50 134-50 144 0l12 80H97l12-80z" fill="#2B6FFF"/>
+        <path d="M117 264l-48-18M250 264l49-18" stroke="#FFD8BF" stroke-width="18" stroke-linecap="round"/>
+        <circle cx="67" cy="245" r="16" fill="#FFD8BF"/>
+        <circle cx="301" cy="245" r="16" fill="#FFD8BF"/>
+        <rect x="47" y="86" width="66" height="50" rx="18" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M62 106h36M62 122h24" stroke="#2B6FFF" stroke-width="7" stroke-linecap="round"/>
+        <rect x="248" y="86" width="66" height="50" rx="18" fill="#fff" stroke="rgba(0,0,0,.08)" stroke-width="3"/>
+        <path d="M263 106h36M263 122h24" stroke="#2B6FFF" stroke-width="7" stroke-linecap="round"/>
+        <path d="M130 334v44M230 334v44" stroke="#343a46" stroke-width="28" stroke-linecap="round"/>
+        <path d="M105 382h52M204 382h52" stroke="#171717" stroke-width="16" stroke-linecap="round"/>
+      </svg>`
+  };
+  return `<div class="sticker-card" style="--type:${t.color}">${svg[key] || svg.organizer}</div>`;
 }
 
 function home(){

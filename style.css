@@ -256,3 +256,87 @@ h1{margin:0;font-size:clamp(44px,7vw,84px);line-height:.93;letter-spacing:-.08em
 .cold{
   background:#fff3f0;
 }
+
+/* v8 SVG sticker characters + type hierarchy */
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Rounded","SF Pro Display","SUIT","Pretendard Variable","Pretendard","Noto Sans KR",system-ui,sans-serif;
+}
+h1,.result h1{
+  font-weight:1000;
+  letter-spacing:-.09em;
+}
+.lead,.summary,.box ul,.compat p{
+  font-weight:560;
+}
+.section h3{
+  font-size:17px;
+  font-weight:1000;
+}
+.catch{
+  display:block;
+  width:fit-content;
+  max-width:100%;
+  margin:12px 0 10px;
+  padding:14px 17px;
+  border-radius:22px;
+  background:color-mix(in srgb,var(--type),white 80%);
+  font-size:22px;
+  font-weight:1000;
+  line-height:1.25;
+  box-shadow:0 14px 32px color-mix(in srgb,var(--type),transparent 84%);
+}
+.sticker-card{
+  width:330px;
+  height:420px;
+  display:grid;
+  place-items:center;
+  border-radius:52px;
+  background:
+    radial-gradient(circle at 26% 12%, rgba(255,255,255,.98), transparent 32%),
+    linear-gradient(180deg,#fff,color-mix(in srgb,var(--type),white 86%));
+  border:1px solid rgba(24,24,27,.08);
+  box-shadow:0 34px 80px rgba(24,24,27,.16);
+  animation:floatySoft 4.8s ease-in-out infinite;
+  position:relative;
+  overflow:hidden;
+}
+.sticker-card:before{
+  content:"";
+  position:absolute;
+  width:170px;
+  height:170px;
+  right:-54px;
+  bottom:-56px;
+  border-radius:50%;
+  background:color-mix(in srgb,var(--type),white 68%);
+  opacity:.65;
+}
+.sticker-svg{
+  width:100%;
+  height:100%;
+  position:relative;
+  z-index:1;
+  filter:drop-shadow(0 18px 24px rgba(24,24,27,.10));
+}
+.character-card,.person,.hair,.face,.prop,.outfit,.arm,.leg,.shoe,.neck{
+  all:unset;
+}
+.character-stage{
+  min-height:500px;
+}
+.mystery-card{
+  font-weight:950;
+  font-size:16px;
+}
+.primary.big{
+  font-size:19px;
+  border-radius:24px;
+}
+.share{
+  font-size:15px;
+}
+@media(max-width:600px){
+  .sticker-card{width:280px;height:360px}
+  .character-stage{min-height:410px}
+  .catch{font-size:18px}
+}
