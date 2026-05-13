@@ -2,7 +2,7 @@ const types = {
   organizer:{
     name:"정리 집착 플래너", icon:"🗂️", color:"#6d8cff", hair:"#202640", hairClass:"bob", prop:"note",
     preset:"일이 흩어져 있으면 마음도 같이 흩어지는 타입",
-    summary:"혼돈을 표와 목록으로 길들이는 사람. 한마디로, ‘일단 정리하면 살 수 있다고 믿는 인간’.",
+    summary:"혼돈을 표와 목록으로 길들이는 사람. 한마디로, ‘일단 정리하면 살 수 있다고 믿는 인간’.",catch:"파일명 안 맞으면 집중력도 같이 무너짐.",sayings:["“잠깐만요 제가 정리해볼게요.”","“이거 담당이 누구였죠?”","“문서 위치만 맞추면 금방 됩니다.”"],
     quote:"“좋아요. 그럼 항목부터 나눠볼게요.”",
     vibe:["회의하다가 자연스럽게 체크리스트를 만들고 있음","정리 안 된 문서를 보면 일보다 정리가 먼저 보임","누가 뭐 하는지 모르면 속으로 불안 게이지 올라감","파일명에 날짜 없으면 조용히 고통받음","결국 모두가 찾는 문서는 이 사람 폴더에 있음"],
     stats:{"실행력":78,"협업력":86,"정리력":100,"디테일":82,"아이디어":58,"운영 안정감":92,"가이드 감각":88,"멘탈 방어력":74},
@@ -16,7 +16,7 @@ const types = {
   curator:{
     name:"톤앤매너 수호자", icon:"🎨", color:"#a678ff", hair:"#3d315f", hairClass:"wave", prop:"palette",
     preset:"‘뭔가 우리 톤이 아닌데?’ 한마디로 모두를 멈추게 하는 타입",
-    summary:"콘텐츠의 결을 지키는 무드 감별사. 한마디로, ‘예쁘게 맞을 때까지 마음이 안 놓이는 사람’.",
+    summary:"콘텐츠의 결을 지키는 무드 감별사. 한마디로, ‘예쁘게 맞을 때까지 마음이 안 놓이는 사람’.",catch:"좋은데… 뭔가 살짝 안 맞음.",sayings:["“톤만 조금 더 맞추면 돼요.”","“좋은데 지금 무드가…”","“폰트만 살짝…”"],
     quote:"“좋은데… 지금 톤이 살짝 다른 것 같아요.”",
     vibe:["문구 하나에도 브랜드 결이 있는지 봄","색감이나 말투가 어긋나면 설명 못 해도 불편함","레퍼런스 저장하다가 원래 하던 일을 잊을 때 있음","‘조금만 더 다듬자’가 생각보다 조금이 아님","결과물이 예쁘게 맞으면 갑자기 세상 관대해짐"],
     stats:{"실행력":64,"협업력":84,"정리력":76,"디테일":96,"아이디어":78,"운영 안정감":70,"가이드 감각":100,"멘탈 방어력":68},
@@ -30,7 +30,7 @@ const types = {
   speed:{
     name:"속도 부스터", icon:"⚡", color:"#ff8b70", hair:"#473129", hairClass:"short", prop:"bolt",
     preset:"완벽한 문서보다 일단 굴러가는 초안을 믿는 타입",
-    summary:"멈춘 일을 앞으로 밀어내는 추진 엔진. 한마디로, ‘초안이라도 있어야 싸울 수 있다고 믿는 사람’.",
+    summary:"멈춘 일을 앞으로 밀어내는 추진 엔진. 한마디로, ‘초안이라도 있어야 싸울 수 있다고 믿는 사람’.",catch:"일단 버전 하나 만들고 생각함.",sayings:["“일단 올려보죠.”","“초안부터 볼까요?”","“빠르게 가죠!”"],
     quote:"“일단 버전 하나 만들어두고 보죠.”",
     vibe:["고민이 길어지면 손이 먼저 움직임","초안 만들기까지 시간이 짧음","수정은 싫지 않은데 정지는 싫음","완벽주의자 옆에 있으면 상대가 불안해질 수 있음","일단 굴러가게 만든 뒤 고치는 쪽이 편함"],
     stats:{"실행력":100,"협업력":72,"정리력":60,"디테일":58,"아이디어":82,"운영 안정감":66,"가이드 감각":54,"멘탈 방어력":84},
@@ -42,7 +42,7 @@ const types = {
     share:"나는 속도 부스터. 일단 초안 만들고 나서 생각하는 편."
   },
   strategist:{
-    name:"큰그림 설계자", icon:"🧭", color:"#3b5bdb", hair:"#202640", hairClass:"wave", prop:"map",
+    name:"큰그림 설계자", catch:"하나 물어봤는데 세계관까지 설명함.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"🧭", color:"#3b5bdb", hair:"#202640", hairClass:"wave", prop:"map",
     preset:"작은 요청 하나에도 전체 맥락부터 찾는 타입",
     summary:"업무의 방향과 이유를 잡는 판 설계자. 한마디로, ‘하나 물어봤는데 배경부터 정리해주는 사람’.",
     quote:"“이게 전체 흐름에서 어떤 역할이에요?”",
@@ -56,7 +56,7 @@ const types = {
     share:"나는 큰그림 설계자. 간단한 일에도 왜 하는지부터 묻는 사람."
   },
   detail:{
-    name:"디테일 검수관", icon:"🔍", color:"#ffd166", hair:"#3a3326", hairClass:"bob", prop:"lens",
+    name:"디테일 검수관", catch:"최종본이라는 말을 아직 믿지 못함.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"🔍", color:"#ffd166", hair:"#3a3326", hairClass:"bob", prop:"lens",
     preset:"오탈자, 링크, 문구, 순서 하나 때문에 잠깐 멈추는 타입",
     summary:"최종본의 마지막 방어선. 한마디로, ‘내 눈에 보인 순간 모두의 일이 되는 사람’.",
     quote:"“잠깐만요. 여기 링크랑 문구 한 번만 더 볼게요.”",
@@ -70,7 +70,7 @@ const types = {
     share:"나는 디테일 검수관. 남들은 못 본 오류 때문에 내가 먼저 지침."
   },
   idea:{
-    name:"즉흥 아이디어러", icon:"💡", color:"#ff6fae", hair:"#4a2638", hairClass:"wave", prop:"spark",
+    name:"즉흥 아이디어러", catch:"좋은 생각이 꼭 지금 떠오름.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"💡", color:"#ff6fae", hair:"#4a2638", hairClass:"wave", prop:"spark",
     preset:"회의 중 갑자기 ‘이것도 되지 않아요?’를 던지는 타입",
     summary:"정체된 판에 새 가능성을 던지는 사람. 한마디로, ‘재밌는데 가끔 모두의 일을 늘리는 사람’.",
     quote:"“근데 이 방향으로 살짝 비틀면 더 재밌지 않아요?”",
@@ -84,7 +84,7 @@ const types = {
     share:"나는 즉흥 아이디어러. 재밌는 생각을 던졌을 뿐인데 일이 커짐."
   },
   experimenter:{
-    name:"일단 해보자 실험가", icon:"🧪", color:"#7bdc65", hair:"#243b2a", hairClass:"short", prop:"spark",
+    name:"일단 해보자 실험가", catch:"작게 해보자고 했는데 안 작음.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"🧪", color:"#7bdc65", hair:"#243b2a", hairClass:"short", prop:"spark",
     preset:"새 방식이 보이면 작게라도 눌러보고 싶은 타입",
     summary:"새로운 방식과 개선 포인트를 계속 열어보는 사람. 한마디로, ‘한 번만 해보자고 하고 세 번 해보는 사람’.",
     quote:"“작게 한 번만 테스트해보면 안 돼요?”",
@@ -98,7 +98,7 @@ const types = {
     share:"나는 일단 해보자 실험가. 한 번만 테스트하자고 하고 다음 실험 생각 중."
   },
   coordinator:{
-    name:"밸런스 조율러", icon:"🤝", color:"#2b6fff", hair:"#1d2d50", hairClass:"wave", prop:"balance",
+    name:"밸런스 조율러", catch:"모두를 챙기다 내 일정만 불탐.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"🤝", color:"#2b6fff", hair:"#1d2d50", hairClass:"wave", prop:"balance",
     preset:"사람, 일정, 요청 사이에서 혼자 줄타기하는 타입",
     summary:"업무가 굴러가게 만드는 완충재. 한마디로, ‘모두를 챙기다가 내 일정만 조용히 불타는 사람’.",
     quote:"“좋아요. 그럼 역할이랑 일정만 한번 정리할게요.”",
@@ -114,13 +114,13 @@ const types = {
 };
 
 const questions = [
-  {q:"새 업무가 들어오면 가장 먼저 하는 행동은?",options:[
+  {q:"갑자기 단톡에 업무가 떨어졌다.",options:[
     ["🗂️","항목부터 나누고 체크리스트를 만든다","정리 안 되면 시작이 안 됨","organizer"],
     ["🎨","표현 톤과 가이드에 맞는지 본다","결이 안 맞으면 마음이 불편함","curator"],
     ["⚡","일단 초안이나 샘플부터 만든다","손에 잡히는 게 있어야 움직임","speed"],
     ["🧭","이 일이 전체 흐름에서 왜 필요한지 본다","맥락 없으면 몸이 안 움직임","strategist"]
   ]},
-  {q:"작업물 공유 직전 제일 신경 쓰이는 건?",options:[
+  {q:"업로드 버튼 누르기 직전…",options:[
     ["🔍","오탈자, 링크, 문구, 순서","내 눈에 보이면 모두의 일이 됨","detail"],
     ["💡","더 재밌게 바꿀 수 있는 한 끗","갑자기 좋은 생각이 남","idea"],
     ["🧪","이번에 새 방식으로 작게 해볼 수 있는지","반복만 하면 심심함","experimenter"],
@@ -295,8 +295,7 @@ function showResult(key){
       </div>
       <div class="result-right">
         <h1>${t.icon} ${t.name}</h1>
-        <p class="summary">${t.summary}</p>
-        <div class="quote">${t.quote}</div>
+        <div class="catch">${t.catch}</div><p class="summary">${t.summary}</p><div class="quote">${t.quote}</div><div class="section"><h3>자주 하는 말</h3><div class="chips">${t.sayings.map(x=>`<span class="chip">${x}</span>`).join("")}</div></div>
 
         <div class="section">
           <h3>평소 업무 스타일</h3>
@@ -348,7 +347,7 @@ function showResult(key){
           <div class="share">${t.share}</div>
         </div>
 
-        <button class="restart" onclick="home()">처음으로</button>
+        <button class="secondary" onclick="window.print()">결과 저장하기</button><button class="restart" onclick="home()">처음으로</button>
       </div>
     </section>`);
 }

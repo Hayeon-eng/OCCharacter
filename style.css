@@ -88,3 +88,74 @@ h1{margin:0;font-size:clamp(44px,7vw,84px);line-height:.93;letter-spacing:-.08em
 .section{margin-top:19px}.section h3{margin:0 0 12px;font-size:16px;letter-spacing:-.03em}.stat{margin:12px 0}.stat-head{display:flex;justify-content:space-between;font-size:13px;font-weight:950;margin-bottom:8px}.bar{height:12px;border-radius:999px;background:rgba(23,23,23,.08);overflow:hidden}.fill{height:100%;border-radius:inherit;background:var(--type)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.box{padding:16px;border-radius:24px;background:rgba(255,255,255,.76);border:1px solid var(--line)}.box ul{margin:8px 0 0;padding-left:18px;color:var(--muted);line-height:1.56}.compat strong{display:block;margin-bottom:6px}.compat p{margin:0;color:var(--muted);line-height:1.5;font-size:14px}.share{padding:16px;border-radius:24px;background:color-mix(in srgb,var(--type),white 86%);font-weight:950;line-height:1.55}
 @media(max-width:900px){.home,.result{grid-template-columns:1fr}.preset-zone{min-height:auto}.preset-grid{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+
+.catch{display:inline-block;margin-top:10px;padding:10px 14px;border-radius:16px;background:color-mix(in srgb,var(--type),white 82%);font-weight:1000;font-size:18px}
+.character-card:after{content:"";position:absolute;right:18px;bottom:20px;width:80px;height:80px;border-radius:24px;background:rgba(255,255,255,.4)}
+
+.primary,.secondary,.restart{
+  animation: breathe 3.6s ease-in-out infinite;
+}
+@keyframes breathe{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-3px)}
+}
+
+.preset-card,.option,.character-card,.chip{
+  transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
+}
+
+.preset-card:hover,.option:hover{
+  transform:translateY(-6px) scale(1.01);
+}
+
+.character-card{
+  animation: floatySoft 4.8s ease-in-out infinite;
+}
+
+@keyframes floatySoft{
+  0%,100%{transform:translateY(0px) rotate(0deg)}
+  50%{transform:translateY(-10px) rotate(.4deg)}
+}
+
+.panel{
+  animation: fadeUp .5s ease;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(16px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.preset-zone:before,
+.character-stage:before{
+  animation: blobMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes blobMove{
+  from{
+    transform:translateY(0px) translateX(0px) scale(1);
+  }
+  to{
+    transform:translateY(12px) translateX(-8px) scale(1.05);
+  }
+}
+
+.option-icon{
+  animation: iconFloat 4s ease-in-out infinite;
+}
+
+@keyframes iconFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-2px)}
+}
+
+.chip:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+}
