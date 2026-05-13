@@ -1,6 +1,6 @@
 {
-  "name": "oc-character-test",
-  "version": "1.0.0",
+  "name": "online-content-group-character-test",
+  "version": "4.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,10 +9,7 @@
     "start": "vite preview --host 0.0.0.0"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "vite": "latest"
   },
   "devDependencies": {}
 }
