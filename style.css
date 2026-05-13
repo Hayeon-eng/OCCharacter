@@ -340,3 +340,126 @@ h1,.result h1{
   .character-stage{min-height:410px}
   .catch{font-size:18px}
 }
+
+
+/* ===== v9 cute corporate office refresh ===== */
+
+:root{
+  --bg-soft:#f4f7ff;
+  --card-soft:#ffffffd9;
+}
+
+body{
+  background:
+    radial-gradient(circle at top left, rgba(120,140,255,.14), transparent 28%),
+    radial-gradient(circle at top right, rgba(255,111,174,.10), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(123,220,101,.10), transparent 24%),
+    linear-gradient(180deg,#f8faff 0%, #eef3ff 100%);
+}
+
+.panel,
+.box,
+.option,
+.preset-card,
+.radar-wrap{
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.option{
+  border-radius:28px;
+  background:rgba(255,255,255,.78);
+  box-shadow:0 14px 40px rgba(43,111,255,.08);
+}
+
+.option:hover{
+  transform:translateY(-8px) scale(1.015);
+  box-shadow:0 24px 60px rgba(43,111,255,.14);
+}
+
+.option-icon{
+  width:56px;
+  height:56px;
+  border-radius:20px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(180deg,#fff,#eef4ff);
+  box-shadow:0 10px 20px rgba(0,0,0,.06);
+  font-size:26px;
+}
+
+.primary,
+.secondary,
+.restart{
+  border-radius:999px;
+  font-weight:950;
+  letter-spacing:-0.03em;
+  box-shadow:0 12px 28px rgba(43,111,255,.18);
+}
+
+.sticker-card{
+  border-radius:56px;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255,255,255,1), transparent 24%),
+    radial-gradient(circle at 82% 20%, rgba(255,255,255,.8), transparent 18%),
+    linear-gradient(180deg,#ffffff 0%, color-mix(in srgb,var(--type),white 84%) 100%);
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:
+    0 30px 80px rgba(24,24,27,.14),
+    inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.sticker-card:after{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border-radius:44px;
+  border:1px dashed rgba(255,255,255,.45);
+  pointer-events:none;
+}
+
+.catch{
+  transform:rotate(-1.2deg);
+}
+
+.chip{
+  background:rgba(255,255,255,.88);
+  box-shadow:0 8px 18px rgba(0,0,0,.05);
+}
+
+.radar{
+  filter:drop-shadow(0 16px 26px rgba(43,111,255,.10));
+}
+
+.polygon{
+  opacity:.88;
+}
+
+.result h1{
+  text-shadow:0 6px 24px rgba(43,111,255,.10);
+}
+
+.character-stage{
+  position:relative;
+}
+
+.character-stage:after{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:24px;
+  bottom:8px;
+  left:50%;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:rgba(24,24,27,.08);
+  filter:blur(12px);
+}
+
+@media(max-width:900px){
+  .sticker-card{
+    width:100%;
+    max-width:340px;
+    margin:0 auto;
+  }
+}
