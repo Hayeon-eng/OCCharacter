@@ -1,6 +1,6 @@
 const types = {
   organizer:{
-    name:"정리 집착 플래너", icon:"🗂️", color:"#6d8cff", hair:"#202640", hairClass:"bob", prop:"note",
+    name:"정리 집착 플래너", advice:"정리 안 된 일을 모두 대신 떠안다 보면, 결국 정리할 사람도 당신밖에 안 남을 수 있어요.", icon:"🗂️", color:"#6d8cff", hair:"#202640", hairClass:"bob", prop:"note",
     preset:"일이 흩어져 있으면 마음도 같이 흩어지는 타입",
     summary:"혼돈을 표와 목록으로 길들이는 사람. 한마디로, ‘일단 정리하면 살 수 있다고 믿는 인간’.",catch:"파일명 안 맞으면 집중력도 같이 무너짐.",sayings:["“잠깐만요 제가 정리해볼게요.”","“이거 담당이 누구였죠?”","“문서 위치만 맞추면 금방 됩니다.”"],
     quote:"“좋아요. 그럼 항목부터 나눠볼게요.”",
@@ -14,7 +14,7 @@ const types = {
     share:"나는 정리 집착 플래너. 혼돈을 보면 표부터 켜는 사람."
   },
   curator:{
-    name:"톤앤매너 수호자", icon:"🎨", color:"#a678ff", hair:"#3d315f", hairClass:"wave", prop:"palette",
+    name:"톤앤매너 수호자", advice:"완벽한 톤을 찾다가 타이밍을 놓치면, 아무도 그 결과를 보지 못할 수도 있어요.", icon:"🎨", color:"#a678ff", hair:"#3d315f", hairClass:"wave", prop:"palette",
     preset:"‘뭔가 우리 톤이 아닌데?’ 한마디로 모두를 멈추게 하는 타입",
     summary:"콘텐츠의 결을 지키는 무드 감별사. 한마디로, ‘예쁘게 맞을 때까지 마음이 안 놓이는 사람’.",catch:"좋은데… 뭔가 살짝 안 맞음.",sayings:["“톤만 조금 더 맞추면 돼요.”","“좋은데 지금 무드가…”","“폰트만 살짝…”"],
     quote:"“좋은데… 지금 톤이 살짝 다른 것 같아요.”",
@@ -28,7 +28,7 @@ const types = {
     share:"나는 톤앤매너 수호자. 좋은데 뭔가 아닌 걸 그냥 못 넘김."
   },
   speed:{
-    name:"속도 부스터", icon:"⚡", color:"#ff8b70", hair:"#473129", hairClass:"short", prop:"bolt",
+    name:"속도 부스터", advice:"빠른 실행은 강점이지만, 반복되는 급한 수정은 결국 미래의 당신이 감당하게 돼요.", icon:"⚡", color:"#ff8b70", hair:"#473129", hairClass:"short", prop:"bolt",
     preset:"완벽한 문서보다 일단 굴러가는 초안을 믿는 타입",
     summary:"멈춘 일을 앞으로 밀어내는 추진 엔진. 한마디로, ‘초안이라도 있어야 싸울 수 있다고 믿는 사람’.",catch:"일단 버전 하나 만들고 생각함.",sayings:["“일단 올려보죠.”","“초안부터 볼까요?”","“빠르게 가죠!”"],
     quote:"“일단 버전 하나 만들어두고 보죠.”",
@@ -42,7 +42,7 @@ const types = {
     share:"나는 속도 부스터. 일단 초안 만들고 나서 생각하는 편."
   },
   strategist:{
-    name:"큰그림 설계자", catch:"하나 물어봤는데 세계관까지 설명함.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"🧭", color:"#3b5bdb", hair:"#202640", hairClass:"wave", prop:"map",
+    name:"큰그림 설계자", advice:"방향을 오래 고민하는 동안, 이미 누군가는 움직이고 있을 수도 있어요.", catch:"하나 물어봤는데 세계관까지 설명함.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"🧭", color:"#3b5bdb", hair:"#202640", hairClass:"wave", prop:"map",
     preset:"작은 요청 하나에도 전체 맥락부터 찾는 타입",
     summary:"업무의 방향과 이유를 잡는 판 설계자. 한마디로, ‘하나 물어봤는데 배경부터 정리해주는 사람’.",
     quote:"“이게 전체 흐름에서 어떤 역할이에요?”",
@@ -56,7 +56,7 @@ const types = {
     share:"나는 큰그림 설계자. 간단한 일에도 왜 하는지부터 묻는 사람."
   },
   detail:{
-    name:"디테일 검수관", catch:"최종본이라는 말을 아직 믿지 못함.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"🔍", color:"#ffd166", hair:"#3a3326", hairClass:"bob", prop:"lens",
+    name:"디테일 검수관", advice:"모든 오류를 막을 수는 없어요. 때로는 ‘충분히 괜찮음’도 필요합니다.", catch:"최종본이라는 말을 아직 믿지 못함.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"🔍", color:"#ffd166", hair:"#3a3326", hairClass:"bob", prop:"lens",
     preset:"오탈자, 링크, 문구, 순서 하나 때문에 잠깐 멈추는 타입",
     summary:"최종본의 마지막 방어선. 한마디로, ‘내 눈에 보인 순간 모두의 일이 되는 사람’.",
     quote:"“잠깐만요. 여기 링크랑 문구 한 번만 더 볼게요.”",
@@ -70,7 +70,7 @@ const types = {
     share:"나는 디테일 검수관. 남들은 못 본 오류 때문에 내가 먼저 지침."
   },
   idea:{
-    name:"즉흥 아이디어러", catch:"좋은 생각이 꼭 지금 떠오름.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"💡", color:"#ff6fae", hair:"#4a2638", hairClass:"wave", prop:"spark",
+    name:"즉흥 아이디어러", advice:"좋은 아이디어가 많아질수록, 끝까지 책임질 아이디어는 줄어들 수 있어요.", catch:"좋은 생각이 꼭 지금 떠오름.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"💡", color:"#ff6fae", hair:"#4a2638", hairClass:"wave", prop:"spark",
     preset:"회의 중 갑자기 ‘이것도 되지 않아요?’를 던지는 타입",
     summary:"정체된 판에 새 가능성을 던지는 사람. 한마디로, ‘재밌는데 가끔 모두의 일을 늘리는 사람’.",
     quote:"“근데 이 방향으로 살짝 비틀면 더 재밌지 않아요?”",
@@ -84,7 +84,7 @@ const types = {
     share:"나는 즉흥 아이디어러. 재밌는 생각을 던졌을 뿐인데 일이 커짐."
   },
   experimenter:{
-    name:"일단 해보자 실험가", catch:"작게 해보자고 했는데 안 작음.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"🧪", color:"#7bdc65", hair:"#243b2a", hairClass:"short", prop:"spark",
+    name:"일단 해보자 실험가", advice:"새로운 시도도 중요하지만, 마무리되지 않은 실험은 팀을 지치게 만들 수 있어요.", catch:"작게 해보자고 했는데 안 작음.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"🧪", color:"#7bdc65", hair:"#243b2a", hairClass:"short", prop:"spark",
     preset:"새 방식이 보이면 작게라도 눌러보고 싶은 타입",
     summary:"새로운 방식과 개선 포인트를 계속 열어보는 사람. 한마디로, ‘한 번만 해보자고 하고 세 번 해보는 사람’.",
     quote:"“작게 한 번만 테스트해보면 안 돼요?”",
@@ -98,7 +98,7 @@ const types = {
     share:"나는 일단 해보자 실험가. 한 번만 테스트하자고 하고 다음 실험 생각 중."
   },
   coordinator:{
-    name:"밸런스 조율러", catch:"모두를 챙기다 내 일정만 불탐.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"🤝", color:"#2b6fff", hair:"#1d2d50", hairClass:"wave", prop:"balance",
+    name:"밸런스 조율러", advice:"모두를 챙기다 보면 정작 당신의 에너지는 아무도 챙기지 못할 수 있어요.", catch:"모두를 챙기다 내 일정만 불탐.", sayings:["“이것도 같이 보면…”","“한 번만 테스트해보면…”","“좋아요 정리해볼게요.”"], icon:"🤝", color:"#2b6fff", hair:"#1d2d50", hairClass:"wave", prop:"balance",
     preset:"사람, 일정, 요청 사이에서 혼자 줄타기하는 타입",
     summary:"업무가 굴러가게 만드는 완충재. 한마디로, ‘모두를 챙기다가 내 일정만 조용히 불타는 사람’.",
     quote:"“좋아요. 그럼 역할이랑 일정만 한번 정리할게요.”",
@@ -213,35 +213,26 @@ function character(key){
 }
 
 function home(){
-  const featured = ["organizer","curator","speed","strategist","detail","idea","experimenter","coordinator"];
   shell(`
-    <section class="panel home">
-      <div class="hero-copy">
-        <div class="eyebrow">✨ OCG 업무 캐릭터 도감</div>
-        <h1>나는 어떤<br/>콘텐츠형 인간?</h1>
+    <section class="panel home simple-home">
+      <div class="hero-copy full">
+        <div class="eyebrow">✨ OCG 업무 캐릭터 테스트</div>
+        <h1>나는 어떤<br/>콘텐츠형 인간일까?</h1>
         <p class="lead">
-          Online Content Group 업무 스타일을 8개의 캐릭터로 분석해요.
-          조회수 같은 외부 지표 말고, 실제 내부 업무 방식 기준으로 만들었습니다.
+          정리형인지, 즉흥형인지, 조율형인지.<br/>
+          Online Content Group 안에서의 당신 업무 스타일을 캐릭터로 분석해봐요.
         </p>
+
+        <div class="mystery-stack">
+          <div class="mystery-card">🗂️ 누군가는 표를 켜고</div>
+          <div class="mystery-card">🎨 누군가는 톤을 맞추고</div>
+          <div class="mystery-card">⚡ 누군가는 일단 올립니다</div>
+          <div class="mystery-card">🧪 누군가는 또 새 걸 해봅니다</div>
+        </div>
+
         <div class="cta-row">
-          <button class="primary" onclick="startTest()">테스트 시작하기</button>
-          <button class="secondary" onclick="showResult('curator')">대표 결과 보기</button>
+          <button class="primary big" onclick="startTest()">내 캐릭터 확인하기</button>
         </div>
-      </div>
-      <div class="preset-zone">
-        <h2 class="preset-title">먼저 끌리는 캐릭터를 골라봐</h2>
-        <p class="preset-sub">프리셋은 미리보기, 진짜 결과는 테스트에서 나와요.</p>
-        <div class="preset-grid">
-          ${featured.map(k=>`
-            <button class="preset-card" style="--type:${types[k].color}" onclick="showResult('${k}')">
-              <div class="preset-top">
-                <div class="mini-face">${types[k].icon}</div>
-                <strong>${types[k].name}</strong>
-              </div>
-              <span>${types[k].preset}</span>
-            </button>`).join("")}
-        </div>
-        <div class="home-note">※ 결과가 너무 맞아도 테스트 탓입니다. 본인 탓은 조금 있습니다.</div>
       </div>
     </section>`);
 }
@@ -305,6 +296,23 @@ function showResult(key){
         </div>
 
         <div class="section">
+          <h3>캐릭터 프로필</h3>
+          <div class="radar-wrap">
+            <div class="radar" style="--type:${t.color}">
+              <div class="polygon"></div>
+              <div class="center"></div>
+            </div>
+            <div class="radar-labels">
+              <span>⚡ 실행력</span>
+              <span>🤝 협업력</span>
+              <span>🎨 감각력</span>
+              <span>🧠 구조력</span>
+              <span>🧪 실험성</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
           <h3>업무 능력치</h3>
           ${Object.entries(t.stats).map(([name,value])=>`
             <div class="stat">
@@ -340,6 +348,11 @@ function showResult(key){
             <strong>${t.bad.type}</strong>
             <p>${t.bad.reason}</p>
           </div>
+        </div>
+
+        <div class="section">
+          <h3>이 사람을 위한 일침</h3>
+          <div class="share cold">${t.advice}</div>
         </div>
 
         <div class="section">
