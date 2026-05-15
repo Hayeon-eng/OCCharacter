@@ -341,92 +341,70 @@ h1,.result h1{
   .catch{font-size:18px}
 }
 
-
-/* ===== ChatGPT redesign refresh ===== */
-
-:root{
-  --bg1:#f7f9ff;
-  --bg2:#edf3ff;
-  --card:#ffffff;
-  --blue:#4f7cff;
-  --mint:#78dcca;
-  --pink:#ff9ecb;
-  --yellow:#ffd76a;
-}
-
+/* v9 soft pastel mascot characters */
 body{
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Rounded","SF Pro Display","SUIT","Pretendard Variable","Pretendard","Noto Sans KR",system-ui,sans-serif;
+}
+h1,.result h1{font-weight:1000;letter-spacing:-.09em;}
+.lead,.summary,.box ul,.compat p{font-weight:560;}
+.section h3{font-size:17px;font-weight:1000;}
+.catch{
+  display:block;
+  width:fit-content;
+  max-width:100%;
+  margin:12px 0 10px;
+  padding:14px 17px;
+  border-radius:22px;
+  background:color-mix(in srgb,var(--type),white 80%);
+  font-size:22px;
+  font-weight:1000;
+  line-height:1.25;
+  box-shadow:0 14px 32px color-mix(in srgb,var(--type),transparent 84%);
+}
+.mascot-card{
+  width:335px;
+  height:425px;
+  display:grid;
+  place-items:center;
+  border-radius:54px;
   background:
-    radial-gradient(circle at top left, rgba(79,124,255,.16), transparent 28%),
-    radial-gradient(circle at top right, rgba(255,158,203,.14), transparent 24%),
-    radial-gradient(circle at bottom right, rgba(120,220,202,.12), transparent 24%),
-    linear-gradient(180deg,var(--bg1) 0%, var(--bg2) 100%);
+    radial-gradient(circle at 24% 13%, rgba(255,255,255,.98), transparent 32%),
+    radial-gradient(circle at 88% 92%, color-mix(in srgb,var(--type),white 70%), transparent 34%),
+    linear-gradient(180deg,#fff,color-mix(in srgb,var(--type),white 88%));
+  border:1px solid rgba(24,24,27,.08);
+  box-shadow:0 34px 80px rgba(24,24,27,.16);
+  animation:floatySoft 4.8s ease-in-out infinite;
+  position:relative;
+  overflow:hidden;
 }
-
-/* softer cards */
-.card,
-.result-card,
-.question-card,
-.type-card{
-  background:rgba(255,255,255,.88)!important;
-  border:1px solid rgba(255,255,255,.8)!important;
-  box-shadow:0 18px 50px rgba(79,124,255,.12)!important;
-  border-radius:32px!important;
-  backdrop-filter:blur(14px);
-}
-
-/* buttons */
-button{
-  border-radius:999px!important;
-  box-shadow:0 10px 24px rgba(79,124,255,.16)!important;
-  transition:all .22s ease;
-}
-
-button:hover{
-  transform:translateY(-3px);
-}
-
-/* options */
-.option{
-  border-radius:24px!important;
-  background:rgba(255,255,255,.92)!important;
-  transition:all .22s ease;
-}
-
-.option:hover{
-  transform:translateY(-5px) scale(1.01);
-  box-shadow:0 18px 40px rgba(79,124,255,.14);
-}
-
-/* cute figma/notion-ish badges */
-.badge,
-.tag,
-.stat-chip{
-  border-radius:999px!important;
-  background:linear-gradient(135deg,#fff,#eef4ff)!important;
-  border:1px solid rgba(79,124,255,.12)!important;
-}
-
-/* character vibe */
-.character,
-.avatar{
-  filter:drop-shadow(0 18px 28px rgba(79,124,255,.18));
-}
-
-/* floating sticker feel */
-.result-card::before{
+.mascot-card:before{
   content:"";
   position:absolute;
-  top:14px;
-  right:18px;
-  width:72px;
-  height:72px;
-  border-radius:24px;
-  background:linear-gradient(135deg,var(--pink),var(--yellow));
-  opacity:.18;
-  transform:rotate(12deg);
+  width:150px;
+  height:150px;
+  left:-42px;
+  top:-42px;
+  border-radius:50%;
+  background:color-mix(in srgb,var(--type),white 66%);
+  opacity:.42;
 }
-
-/* radar polish */
-svg{
-  filter:drop-shadow(0 12px 24px rgba(79,124,255,.10));
+.mascot-svg{
+  width:100%;
+  height:100%;
+  position:relative;
+  z-index:1;
+}
+.character-card,.sticker-card,.person,.hair,.face,.prop,.outfit,.arm,.leg,.shoe,.neck{
+  all:unset;
+}
+.character-stage{min-height:505px;}
+.result-left{background:rgba(255,255,255,.72);}
+.mystery-card{font-weight:950;font-size:16px;}
+.primary.big{font-size:19px;border-radius:24px;}
+.share{font-size:15px;}
+.radar-wrap{box-shadow:inset 0 1px rgba(255,255,255,.7);}
+@media(max-width:600px){
+  .mascot-card{width:285px;height:365px;border-radius:44px;}
+  .character-stage{min-height:415px;}
+  .catch{font-size:18px;}
 }

@@ -1,8 +1,18 @@
-# Online Content Group 업무 유형 테스트 v4
+# Online Content Group 업무 유형 테스트 v9
 
-조회수/CTR/리텐션 같은 외부 콘텐츠 지표를 제거하고, Online Content Group 내부 업무 방식 중심으로 수정한 버전입니다.
+기존 flat/Vite 구조 유지, 캐릭터를 CSS 도형 조립형에서 파스텔 마스코트 SVG 스타일로 교체한 버전입니다.
 
-## Render Static Site
+## 구조
+
+```text
+index.html
+main.js
+style.css
+package.json
+README.md
+```
+
+## Render Static Site 설정
 
 Build Command:
 ```bash
@@ -14,7 +24,7 @@ Publish Directory:
 dist
 ```
 
-Environment:
+Environment Variable:
 ```bash
 NODE_VERSION=20.19.0
 ```
