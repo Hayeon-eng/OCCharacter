@@ -1,18 +1,8 @@
-# Online Content Group 업무 유형 테스트 v9
+# Online Content Group 업무 캐릭터 테스트 v10
 
-기존 flat/Vite 구조 유지, 캐릭터를 CSS 도형 조립형에서 파스텔 마스코트 SVG 스타일로 교체한 버전입니다.
+파스텔 마스코트 SVG 캐릭터 스타일로 교체한 버전입니다.
 
-## 구조
-
-```text
-index.html
-main.js
-style.css
-package.json
-README.md
-```
-
-## Render Static Site 설정
+## Render Static Site
 
 Build Command:
 ```bash
